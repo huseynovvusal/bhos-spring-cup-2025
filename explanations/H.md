@@ -119,26 +119,42 @@ Our solution counts all such valid pairs efficiently using a frequency counter a
 
 ```python
 def solve():
+    # Read the size of the array
     n = int(input())
+    # Read array elements
     arr = list(map(int, input().split()))
+    # Dictionary to track frequency of each number
     d = {}
+    # Initialize result counter
     res = 0
 
+    # Process array in reverse order to ensure we only count pairs (i,j) where i appears after j
     for a in reversed(arr):
+        # Special case: When a = 4, pairs with previous 4's form valid arithmetic progressions
+        # Since for Aj = 4, Ai = 3*4/(4-1) = 4
         if a == 4:
+            # Count pairs with previous 4's
             res += d.get(4, 0)
+
+        # Special case: When a = 6, pairs with 2's form valid arithmetic progressions
+        # Since for Aj = 2, Ai = 3*2/(2-1) = 6
         elif a == 6:
+            # Count pairs with previous 2's
             res += d.get(2, 0)
 
+        # Update frequency count for current element
         if a in d:
             d[a] += 1
         else:
             d[a] = 1
 
+    # Output the result
     print(res)
 
+# Read number of test cases
 t = int(input())
 
+# Process each test case
 for _ in range(t):
     solve()
 ```

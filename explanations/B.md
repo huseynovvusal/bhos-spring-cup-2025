@@ -24,15 +24,12 @@ formula = 3 * (2 ** (n - 1))
 
 ## ⏱️ Complexity
 
-- **Time**: $O(1)$
-- **Space**: $O(1)$
+- **Time**: $O(1)$ - direct formula calculation regardless of input size
+- **Space**: $O(1)$ - constant additional space regardless of input size
 
 ## 💻 Full Solution
 
 ```python
-# Problem B: Colored Boxes
-# Calculate ways to paint N boxes with 3 colors where no adjacent boxes have the same color
-
 n = int(input())
 
 # Formula: 3 * 2^(n-1)

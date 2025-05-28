@@ -34,17 +34,12 @@ def count_mirror_primes(a, b):
 
 ## ⏱️ Complexity
 
-- **Time**: $O((b-a)\sqrt{b})$
-- **Space**: $O(1)$
+- **Time**: $O((b-a)\sqrt{b})$ - checking primality for each number in range [a,b]
+- **Space**: $O(1)$ - constant additional space regardless of input size
 
 ## 💻 Full Solution
 
 ```python
-# Problem A: Mirror Primes
-# A "mirror prime" is a number that is:
-# 1) Prime itself
-# 2) When its digits are reversed, that number is also prime
-
 def is_prime(n):
     # Numbers less than 2 are not prime by definition
     if n < 2:

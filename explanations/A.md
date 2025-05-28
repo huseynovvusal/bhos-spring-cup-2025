@@ -14,23 +14,22 @@ Count the number of "mirror primes" in range $[a,b]$ where $1 \leq a \leq b \leq
 
 ## 🔑 Key Steps
 
-```python
-# 1. Check if number is prime
-def is_prime(n):
-    if n < 2: return False
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0: return False
-    return True
+1. **Define a primality check function**:
 
-# 2. Reverse digits
-def reverse_number(n):
-    return int(str(n)[::-1])
+   - Check if a number is greater than or equal to 2
+   - Test divisibility by integers from 2 to the square root of the number
+   - Return true if no divisors are found
 
-# 3. Count mirror primes
-def count_mirror_primes(a, b):
-    return sum(1 for num in range(a, b + 1)
-              if is_prime(num) and is_prime(reverse_number(num)))
-```
+2. **Create a digit-reversal function**:
+
+   - Convert the number to a string
+   - Reverse the string using slicing
+   - Convert back to an integer
+
+3. **Process each number in range [a,b]**:
+   - Check if the number is prime
+   - If prime, reverse the digits and check if the reversed number is also prime
+   - Count numbers that satisfy both conditions
 
 ## ⏱️ Complexity
 

@@ -14,13 +14,21 @@ Calculate the number of ways to paint $N$ boxes with 3 colors (red, yellow, and 
 
 ## 🔑 Key Steps
 
-```python
-# 1. Apply combinatorial principle:
-# First position: 3 choices, remaining positions: 2 choices each
+1. **Analyze the coloring constraints**:
 
-# 2. Express as formula
-formula = 3 * (2 ** (n - 1))
-```
+   - For the first box, we can use any of the 3 colors (red, yellow, green)
+   - For each subsequent box, we cannot use the same color as the adjacent box
+   - This means each box after the first has 2 possible color choices
+
+2. **Apply the multiplication principle**:
+
+   - First box: 3 choices
+   - Each of the remaining (N-1) boxes: 2 choices each
+   - Total number of ways: 3 × 2^(N-1)
+
+3. **Calculate the result**:
+   - Use modular exponentiation for large values of N if needed
+   - Return the final count of valid colorings
 
 ## ⏱️ Complexity
 

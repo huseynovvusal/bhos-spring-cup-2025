@@ -14,24 +14,26 @@ Generate an $N \times N$ matrix with numbers 1 to $N^2$ filled in anti-diagonal 
 
 ## 🔑 Key Steps
 
-```python
-# 1. Create empty matrix
-res = [[0] * n for _ in range(n)]
-num = 1
+1. **Initialize the matrix**:
 
-# 2. Fill matrix along anti-diagonals
-for _i in range(n):
-    for _j in range(n):
-        i, j = _i, _j
-        if res[i][j] != 0: continue  # Skip already filled cells
+   - Create an N×N matrix filled with zeros
+   - Set a counter variable to 1, which will be used to fill the matrix
 
-        # Fill all cells along current anti-diagonal
-        while 0 <= i < n and 0 <= j < n:
-            res[i][j] = num
-            num += 1
-            i += 1  # Move down
-            j -= 1  # Move left
-```
+2. **Implement the anti-diagonal traversal**:
+
+   - Use nested loops to iterate through each cell as potential starting points
+   - For each unvisited cell, trace the entire anti-diagonal from that point
+   - Anti-diagonals run from top-right to bottom-left (or down and left)
+
+3. **Fill values along anti-diagonals**:
+
+   - For each starting point, follow the anti-diagonal path
+   - Increment row (move down) and decrement column (move left) for each step
+   - Fill cells with increasing numbers while staying within matrix boundaries
+   - Skip cells that have already been filled
+
+4. **Display the result**:
+   - Print the completed matrix in the required format
 
 ## ⏱️ Complexity
 

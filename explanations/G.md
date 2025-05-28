@@ -37,21 +37,26 @@ The difference is |9 - 8| = 1, which is minimal.
 
 ## 🔑 Key Steps
 
-```python
-def recurse_apples(weights, i = 0, sum1 = 0, sum2 = 0):
-	# Base case: all mushrooms have been placed
-	if i == n:
-		return abs(sum2 - sum1)  # Return the absolute difference
+1. **Define a recursive approach**:
 
-	# Try both possibilities and take the minimum:
-	return min(
-		# Option 1: Add current mushroom to group 1
-		recurse_apples(weights, i + 1, sum1 + weights[i], sum2),
+   - Create a function that processes one mushroom at a time
+   - Track the running sum of weights for both groups
+   - Use index parameter to keep track of which mushroom is being processed
 
-		# Option 2: Add current mushroom to group 2
-		recurse_apples(weights, i + 1, sum1, sum2 + weights[i]),
-	)
-```
+2. **Implement the decision process**:
+
+   - For each mushroom, consider adding it to either group 1 or group 2
+   - Make two recursive calls representing both choices
+   - Take the minimum result from both decisions
+
+3. **Handle the base case**:
+
+   - When all mushrooms have been assigned (index reaches n)
+   - Calculate and return the absolute difference between group sums
+
+4. **Optimize if needed**:
+   - For larger inputs, consider using memoization to avoid redundant calculations
+   - Dynamic programming approach would store results of subproblems
 
 ## ⏱️ Complexity
 

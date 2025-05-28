@@ -14,20 +14,24 @@ Given $n$ events with start times $a$ and end times $b$, find the maximum number
 
 ## 🔑 Key Steps
 
-```python
-# 1. Sort events by end time (earlier ending events first)
-intervals.sort(key=lambda x: x[1])
+1. **Prepare the events data**:
 
-# 2. Process events greedily
-count = 0
-current_end = 0
+   - Store each event as a pair of (start_time, end_time)
+   - Sort all events by their end times (greedy approach)
 
-for start, end in intervals:
-    # If current event starts after previous event ends, select it
-    if current_end <= start:
-        current_end = end
-        count += 1
-```
+2. **Initialize tracking variables**:
+
+   - Set count of attended events to zero
+   - Set current_end to zero (representing the earliest possible start time)
+
+3. **Process events in sorted order**:
+
+   - For each event, check if it starts after the current_end time
+   - If compatible (no overlap), include the event and update current_end
+   - Continue until all events are processed
+
+4. **Return the result**:
+   - The final count represents the maximum number of non-overlapping events
 
 ## ⏱️ Complexity
 

@@ -14,14 +14,20 @@ For a given three-digit number, rearrange its digits to form the largest possibl
 
 ## 🔑 Key Steps
 
-```python
-# 1. Rearrange digits to get largest number
-# Sort the digits in descending order
-largest_number = int("".join(sorted(input(), reverse=True)))
+1. **Extract and process input**:
 
-# 2. Calculate and print the square
-result = largest_number ** 2
-```
+   - Read the three-digit number as a string
+   - Convert the string to individual characters
+
+2. **Rearrange to find maximum number**:
+
+   - Sort the digits in descending order
+   - Join the sorted digits into a new string
+   - Convert the string back to an integer
+
+3. **Calculate the result**:
+   - Square the rearranged number
+   - Return the final value
 
 ## ⏱️ Complexity
 

@@ -43,26 +43,25 @@ Therefore, 200 is the maximum possible segment length.
 
 ## 🔑 Key Steps
 
-```python
-# 1. Set up binary search boundaries
-left = 1                 # Minimum possible length (1 cm)
-right = max(lengths)     # Maximum possible length
+1. **Define search boundaries**:
 
-# 2. Perform binary search for optimal segment length
-while left <= right:
-    mid = (left + right) // 2
+   - Set minimum possible segment length as 1
+   - Set maximum possible segment length as the length of the longest ribbon
 
-    # Count how many segments of length mid we can make
-    count = sum(l // mid for l in lengths)
+2. **Implement binary search**:
 
-    if count >= k:
-        # We can make at least k segments, try for larger length
-        result = mid
-        left = mid + 1
-    else:
-        # Can't make k segments, try smaller length
-        right = mid - 1
-```
+   - Calculate the mid-point as the potential segment length
+   - For each potential length, compute how many segments can be cut from all ribbons
+   - Keep track of the best valid segment length found so far
+
+3. **Check feasibility for each potential length**:
+
+   - Calculate the total number of segments by summing ⌊ribbon_length/segment_length⌋ for each ribbon
+   - If total segments ≥ k: The length is feasible, so update result and search for larger lengths
+   - If total segments < k: The length is too large, search for smaller lengths
+
+4. **Return the optimal result**:
+   - The final value represents the maximum possible segment length
 
 ## ⏱️ Complexity
 

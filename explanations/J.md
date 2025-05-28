@@ -1,4 +1,4 @@
-# J. Array XOR Queries
+# J. XOR Queries
 
 ## 📝 Problem
 

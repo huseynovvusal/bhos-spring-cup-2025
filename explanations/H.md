@@ -1,4 +1,4 @@
-# H. Prize-Winning Pairs
+# H. Gift
 
 ## 📝 Problem
 

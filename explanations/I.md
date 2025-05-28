@@ -1,4 +1,4 @@
-# I. Permutation Subarrays
+# I. Count Subarrays
 
 ## 📝 Problem
 

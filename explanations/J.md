@@ -79,11 +79,11 @@ For array [1, 1, 1, 1, 1] with prefix XORs [1, 0, 1, 0, 1]:
 
 ## ⏱️ Complexity
 
-- **Time**:
+- **Time Complexity**:
   - Initialization: $O(n)$
   - Update: $O(\sqrt{n})$ per update (worst case)
   - Query: $O(\sqrt{n})$ per query
-- **Space**: $O(n + \sqrt{n} \cdot \text{max\_value})$ for storing blocks and frequency dictionaries
+- **Space Complexity**: $O(n + \sqrt{n} \cdot \text{max\_value})$ for storing blocks and frequency dictionaries
 
 ## 💻 Full Solution
 
